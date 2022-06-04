@@ -16,7 +16,7 @@ function App() {
                     <AuthRoute exact path="/login" component={Login} />
                     <AuthRoute exact path="/register" component={Register} />
                     <PrivateRoute exact path="/appointments" component={Appointment} />
-                    <Route exact path="/service" component={ServiceDetails} />
+                    <Route exact path="/service/:slug" component={ServiceDetails} />
                 </Switch>
             </Router>
         </div>

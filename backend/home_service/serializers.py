@@ -18,7 +18,8 @@ class ServiceSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    address = AddressSerializer()
+    address = AddressSerializer(read_only=True)
+    password = serializers.CharField(write_only=True)
 
     def create(self, validated_data):
         user = User(**validated_data, is_superuser=True, is_staff=True)
